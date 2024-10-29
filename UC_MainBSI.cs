@@ -31,7 +31,7 @@ namespace NM.BSI
         DA_NMBSI DA_NMBSI;
         UC_GB_DetailGeneral UC_GB_DetailGeneral;
         string regKey = "Software\\NordseeMilch\\BSIStandard\\TreeListMain";
-        //TreeListColumn treeListColumnMainTree_CSBProzessNummer;
+        TreeListColumn treeListColumnMainTree_MainBlock_ID;
 
         public UC_MainBSI(UCParameter uCParameter) : base(uCParameter)
         {
@@ -58,8 +58,10 @@ namespace NM.BSI
         {
             DC_ANBSIDataContext dC_ANBSIDataContext = new DC_ANBSIDataContext(UCParameter.AppConnectString);
             dC_ANBSIDataContext.ObjectTrackingEnabled = false;
-            InitDisplay(dC_ANBSIDataContext.TBL_AN_BSIStandard_MainTree.Where(t => t.MainTree_TagDel ==  Properties.Settings.Default.appSettingMainTreeShowDeleteItems | t.MainTree_TagDel == false));
+            //InitDisplay(dC_ANBSIDataContext.TBL_AN_BSIStandard_MainTree.Where(t => t.MainTree_TagDel ==  Properties.Settings.Default.appSettingMainTreeShowDeleteItems | t.MainTree_TagDel == false));
+            
             DA_NMBSI = new DA_NMBSI(UCParameter);
+            InitDisplay(DA_NMBSI.GetBSIStandard_MainTrees());
         }
 
         #endregion
@@ -71,16 +73,20 @@ namespace NM.BSI
         {
             base.InitDisplay(queryable);
 
+            //if ()
+            //{
+
+            //}
             //Zusatzspalte erstellen
-            //treeListColumnMainTree_CSBProzessNummer = new TreeListColumn();
-            //treeListColumnMainTree_CSBProzessNummer.FieldName = "MainTree_CSBProzessNr";
-            //treeListColumnMainTree_CSBProzessNummer.Caption = "CSB ProzessNr";
-            //treeListColumnMainTree_CSBProzessNummer.Visible = true;
-            //treeListColumnMainTree_CSBProzessNummer.OptionsColumn.AllowSort = false;
-            //treeListColumnMainTree_CSBProzessNummer.MaxWidth = 100;
+            treeListColumnMainTree_MainBlock_ID = new TreeListColumn();
+            treeListColumnMainTree_MainBlock_ID.FieldName = "TBL_AN_BSIStandard_MainBlock.MainBlockID";
+            treeListColumnMainTree_MainBlock_ID.Caption = "MainBlockID";
+            treeListColumnMainTree_MainBlock_ID.Visible = true;
+            treeListColumnMainTree_MainBlock_ID.OptionsColumn.AllowSort = false;
+            treeListColumnMainTree_MainBlock_ID.MaxWidth = 100;
 
 
-            //treeListMainView.Columns.Add(treeListColumnMainTree_CSBProzessNummer);
+            treeListMainView.Columns.Add(treeListColumnMainTree_MainBlock_ID);
             ribbonPageItems.Text = "BSI-Standard";
             splitContainerMainView.SplitterPosition = Properties.Settings.Default.appSettingUCNMBSISplitterPOS;
         }
