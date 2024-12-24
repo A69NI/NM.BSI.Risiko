@@ -313,8 +313,8 @@ namespace NM.BSI.UC
             tBL_AN_BSIStandard_EditList.EditList_UserCommit = tempUserCommit;
             tBL_AN_BSIStandard_EditList.EditList_Create = DateTime.Now;
             tBL_AN_BSIStandard_EditList.EditList_LastChange = DateTime.Now;
-            tBL_AN_BSIStandard_EditList.EditList_UserName = UCParameter.LogInUser.DisplayName;
-            tBL_AN_BSIStandard_EditList.EditList_UserStrSID = UCParameter.LogInUser.SSID.ToString();
+            tBL_AN_BSIStandard_EditList.EditList_UserName = UCParameter.MemberAndGroups.Member.DisplayName;
+            tBL_AN_BSIStandard_EditList.EditList_UserStrSID = UCParameter.MemberAndGroups.Member.SID.ToString();
             tempDSID = DA_NMBSI.SetBSiStandard_EditListItem(tBL_AN_BSIStandard_EditList);
             LoadLastChangeFoot(DA_NMBSI.GetBSIStandard_EditListItemLastChange(UCParameter.SelMainTreeID));
             return tempDSID;

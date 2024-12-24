@@ -56,7 +56,7 @@ namespace NM.BSI
 
         private void InitDaten()
         {
-            DC_ANBSIDataContext dC_ANBSIDataContext = new DC_ANBSIDataContext(UCParameter.AppConnectString);
+            DC_ANBSIDataContext dC_ANBSIDataContext = new DC_ANBSIDataContext(UCParameter.AppNMDataTransferConnectionString);
             dC_ANBSIDataContext.ObjectTrackingEnabled = false;
             //InitDisplay(dC_ANBSIDataContext.TBL_AN_BSIStandard_MainTree.Where(t => t.MainTree_TagDel ==  Properties.Settings.Default.appSettingMainTreeShowDeleteItems | t.MainTree_TagDel == false));
             

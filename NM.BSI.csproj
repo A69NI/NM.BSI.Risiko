@@ -113,13 +113,13 @@
       <Project>{bcbc27ee-52cb-4142-9efb-c1861bb2568f}</Project>
       <Name>accLog</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Users\an\OneDrive\Projekte\Software\Bibliotheken\c#\accUserManagement\accUserManagement.csproj">
-      <Project>{E787FF7C-9720-4B02-88C4-328DF2159683}</Project>
-      <Name>accUserManagement</Name>
-    </ProjectReference>
     <ProjectReference Include="..\accANCollection\accANCollection.csproj">
       <Project>{73653266-806a-4892-9192-36162600ef4d}</Project>
       <Name>accANCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NM.SEC.MembersAndGroups\NM.SEC.MembersAndGroups.csproj">
+      <Project>{8B8D5D18-21C5-4B2C-9B83-CFEBD6ACC004}</Project>
+      <Name>NM.SEC.MembersAndGroups</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
